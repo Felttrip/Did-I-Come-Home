@@ -22,10 +22,10 @@
 <?php
 if (isset( $_POST['submit']))
 {
-	//include('../CS3380/secure/database.php');
-    include('../secure/database.php');
+	include('../CS3380/secure/database.php');
+    //include('../secure/database.php');
 
-    $conn = pg_connect(HOST." ".DBNAME." ".USERNAME." ".PASSWORD) or die('Could not connect:' . pg_last_error());
+    $conn = pg_connect(HOST." ".DBNAME." ".USERNAME." ".PASSWORD);// or die('Could not connect:' . pg_last_error());
 	$name = htmlspecialchars($_POST["name"]);
 	$location = htmlspecialchars($_POST["location"]);
 	$startDate = htmlspecialchars($_POST["startDate"]);
@@ -42,7 +42,8 @@ if (isset( $_POST['submit']))
 	pg_execute($conn,"add_trip",array($name,$location,$startDate,$endDate,$userEmail,$contactEmail,$message));
 	header("Location: pass.html");
 
-}?>
+}
+?>
 <div id = "form">
 <form  method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
 	<div>Name?<br><input type="text" name="name" required/></div>
