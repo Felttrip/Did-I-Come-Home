@@ -32,12 +32,12 @@ if (isset( $_POST['submit']))
 }?>
 <div id = "form">
 <form  method="POST" action="<?= $_SERVER['PHP_SELF'] ?>">
-	<div>Name?<br><input type="text" name="name"/></div>
-	<div>Where are you going?<br><input type="text" name="location"/></div>
-	<div>When are you leaving?<br><input type="date" name="startDate"/></div>
-	<div>When should you be home?<br><input type="date" name="endDate"/></div>
-	<div>What is your email address?<br><input type="email" name="userEmail" autocomplete="off"/></div>
-	<div>Who should we contact if you don't come back in time?<br><input type="email" name="contactEmail" autocomplete="off"/></div>
+	<div>Name?<br><input type="text" name="name" required/></div>
+	<div>Where are you going?<br><input type="text" name="location" required/></div>
+	<div>When are you leaving?<br><input type="date" name="startDate" required/></div>
+	<div>When should you be home?<br><input type="date" name="endDate" required/></div>
+	<div>What is your email address?<br><input type="email" name="userEmail" autocomplete="off" required/></div>
+	<div>Who should we contact if you don't come back in time?<br><input type="email" name="contactEmail" autocomplete="off" required:/></div>
 	<div><textarea rows="4" cols="50" name = "message">Anything else you want to tell your contact person?</textarea>
     <input type="submit" name="submit" value="Submit" />
 </form>
