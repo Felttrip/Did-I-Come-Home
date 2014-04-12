@@ -19,7 +19,8 @@ while ($line = pg_fetch_array($result, null, PGSQL_ASSOC))
 	{
 		$message = $message."They also left the message \n $queryMessage \n";
 	}
-	$message = $message."<html><body><h1>Please check on them!</h1>\n If they have returned safely or you wish to stop recieving these emails follow this link www.nathanielthompson.info/DidIComeHome/madeIt.php?</body></html>";
+	$message = $message."<html><body><h1>Please check on them!</h1>\n If they have returned safely or you wish to stop recieving these emails click";
+	$message .= "<form method=\"POST\" action=\"www.nathanielthompson.info/DidIComeHome/madeIt.php\"><input type=\"hidden\" name=\"userid\" value=\"$userId\" /><input type=\"submit\" name=\"submit\" value=\"here\" /></form></body></html>";
 	mail($to,$subject,$message,$header);
 }
 
